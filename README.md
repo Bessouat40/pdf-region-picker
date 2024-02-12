@@ -2,7 +2,7 @@
 
 A project to select only part of a PDF file.
 
-It's usefull when you want to extract informations with some python library like `PyPDF`.
+It's usefull when you want to extract informations with some python library like `fitz`.
 
 ![Watch the video](./test.gif)
 
