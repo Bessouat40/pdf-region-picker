@@ -33,14 +33,7 @@ const App = () => {
   const onUploadFile = (event) => {
     setStep(0);
     const uploadedFile = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const fileDataUrl = reader.result;
-      setFile(fileDataUrl);
-    };
-
-    reader.readAsDataURL(uploadedFile);
+    setFile(URL.createObjectURL(uploadedFile));
   };
 
   const onCalibrate = () => {
