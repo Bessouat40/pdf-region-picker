@@ -48,10 +48,15 @@ const App = () => {
   };
 
   const onCalculate = () => {
-    const xmin = (position.x - calibration.x) / calibration.width;
-    const ymin = (position.y - calibration.y) / calibration.height;
-    const xmax = position.width / calibration.width;
-    const ymax = position.height / calibration.height;
+    const delta_x = position.x - calibration.x;
+    const delta_y = position.y - calibration.y;
+    const xmin = Math.round((delta_x / calibration.width) * 100) / 100;
+    const ymin = Math.round((delta_y / calibration.height) * 100) / 100;
+    const xmax =
+      Math.round(((position.width + delta_x) / calibration.width) * 100) / 100;
+    const ymax =
+      Math.round(((position.height + delta_y) / calibration.height) * 100) /
+      100;
     setResult({
       xmin: xmin,
       ymin: ymin,
